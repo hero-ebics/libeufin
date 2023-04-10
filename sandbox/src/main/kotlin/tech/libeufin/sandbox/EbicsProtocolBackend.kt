@@ -1393,7 +1393,7 @@ private fun makeRequestContext(requestObject: EbicsRequest): RequestContext {
 
 suspend fun ApplicationCall.ebicsweb() {
     val requestDocument = this.request.call.receive<Document>()
-    val requestedHostID = requestDocument.getElementsByTagName("HostID")
+    val requestedHostID = requestDocument.getElementsByTagNameNS("urn:org:ebics:H004","HostID")
     this.attributes.put(
         EbicsHostIdAttribute,
         requestedHostID.item(0).textContent
