@@ -12,7 +12,7 @@ plugins {
 }
 
 group = 'tech.libeufin'
-version = '0.9.2'
+version = '1.0.7'
 
 if (!JavaVersion.current().isJava11Compatible()){
     throw new GradleException(
@@ -28,6 +28,28 @@ allprojects {
     repositories {
         mavenCentral()
         jcenter()
+        mavenLocal()
+    }
+}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        mavenLocal()
+    }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId 'tech.libeufin'
+                artifactId project.name
+                version '1.0.6'
+                from components.java
+            }
+        }
     }
 }
 
