@@ -1,5 +1,17 @@
 This library was cloned from the project taler.net, see https://git.taler.net/.
 
+Here we released libeufin via jitpack. 
+
+To add whole the project in you dependencies:
+
+`implementation("com.github.hero-ebics:libeufin:1.0.7")`
+
+To add for example `the sandbox`:
+
+`implementation("com.github.hero-ebics.libeufin:sandbox:1.0.7")`
+
+below is original readme
+
 
 Installing LibEuFin
 ===================
